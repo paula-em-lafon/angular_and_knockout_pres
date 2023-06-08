@@ -31,7 +31,7 @@
             }
         });
 
-        todoApp.controller("ToDoCtrl", function($scope) {
+        todoApp.controller("ToDoCtrl", ['$scope', function($scope) {
             $scope.todo = model;
 
             $scope.incompleteCount = function () {
@@ -50,7 +50,7 @@
                 $scope.todo.items.push({ action: actionText, done: false})
             }
 
-        });
+        }]);
 
     </script>
 </head>
