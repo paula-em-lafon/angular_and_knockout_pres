@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>style Binding</title>
+</head>
+<body>
+    <!--view-->
+    <div data-bind="text: details"></div>
+    <a data-bind="attr: {href:url, title: details}">
+        Report
+    </a>
+    <!-- end -->
+    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js" type='text/javascript'></script>
+    <script type="text/javascript">
+        var viewModel = {
+            url: ko.observable("http://localhost:8080/1appearance/cssBinding.html"),
+            details: ko.observable("attribute binding knockoutJS")
+        }
+        ko.applyBindings(viewModel);
+    </script>
+</body>
+</html>

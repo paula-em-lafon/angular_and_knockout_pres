@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Text Binding</title>
+</head>
+<body>
+    <!--view-->
+    Name of Person is: <input type="text" data-bind="value: firstName" style="width:240px" />
+    Name of person is <span data-bind="text: firstName"></span>
+    <!-- end -->
+    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js" type='text/javascript'></script>
+    <script type="text/javascript">
+        var viewModel = {
+            firstName: ko.observable("Matt")
+        }
+        ko.applyBindings(viewModel);
+    </script>
+</body>
+</html>

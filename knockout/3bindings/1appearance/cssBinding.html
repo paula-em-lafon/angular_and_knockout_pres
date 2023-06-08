@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>css Binding</title>
+    <style>
+        .pass {
+            color:green
+        }
+        .failed {
+            color:red
+        }
+    </style>
+</head>
+<body>
+    <!--view-->
+    Input Marks: <input type="text" data-bind="value: marks" style="width:240px" />
+    <div data-bind="css: resultStatus">
+        Result
+    </div>
+    <!-- end -->
+    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js" type='text/javascript'></script>
+    <script type="text/javascript">
+        var viewModel = function () {
+            this.marks = ko.observable(100);
+            this.resultStatus = ko.computed(function() {
+                return this.marks() < 50 ? "failed" : "pass";
+            })
+        }
+        ko.applyBindings(viewModel);
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Form Binding - Value</title>
+</head>
+<body>
+    <!-- Two way binding populates textbox syncs both ways -->
+    <p><input data-bind="value: firstName, valueUpdate:'afterKeydown'" /></p>
+
+    <!-- one way binding populates textbox syncs only from textbox to model -->
+    <p><input data-bind="value: lastName" /></p>
+
+    <!-- no binding populates textbox but doesn't react to any changes -->
+    <p><input data-bind="value: lastName.length > 8" /></p>
+    <div data-bind="html:firstName"></div>
+</div>
+    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js" type='text/javascript'></script>
+    <script type="text/javascript">  
+        var viewModel = {
+            firstName: ko.observable("Matt"),
+            lastName: "Daemon"
+        };
+        ko.applyBindings(viewModel);
+    </script>
+</body>
+</html>

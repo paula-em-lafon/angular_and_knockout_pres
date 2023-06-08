@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Form Binding - Options</title>
+</head>
+<body>
+    <p>Destination Country: <select data-bind="options: availableCountries, selectedOptions: chosenCountries" multiple="true"></select></p>
+    <input type="button" data-bind="click: addCountry" value="Add Country"/>
+    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js" type='text/javascript'></script>
+    <script type="text/javascript">  
+        var viewModel = {
+            availableCountries: ko.observableArray(['USA', 'Australia', 'SriLanka']),
+            chosenCountries: ko.observableArray(['Australia']),
+            addCountry: function () {
+                this.chosenCountries.push('SriLanka');
+            },
+        };
+        ko.applyBindings(viewModel);
+    </script>
+</body>
+</html>

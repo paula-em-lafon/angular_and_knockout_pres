@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>html Binding</title>
+</head>
+<body>
+    <!--view-->
+    Html Text: <input type="text" data-bind="value: details" style="width:240px" />
+    <div data-bind="html: details"></div>
+    <!-- end -->
+    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js" type='text/javascript'></script>
+    <script type="text/javascript">
+        var viewModel = {
+            details: ko.observable()
+        }
+        ko.applyBindings(viewModel);
+    </script>
+</body>
+</html>

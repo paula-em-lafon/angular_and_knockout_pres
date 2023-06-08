@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Introduction to KnockoutJS - Components</title>
+</head>
+<body>
+    <template id="signup-template">
+        <fieldset>
+            <legend>
+                User Sign-up
+            </legend>
+            <p><input type="text" placeholder="First Name" data-bind="value:firstname" /></p>
+            <p><input type="text" placeholder="last Name" data-bind="value:lastname" /></p>
+
+            <div data-bind="html: fullname"></div>
+
+            <p><input type="email" placeholder="Email" data-bind="value:email" /></p>
+            <p><input type="password" placeholder="Password" data-bind="value:password" /></p>
+            <p><input type="button" value="Submit" value="Create Account" /></p>
+            <div>User Sign up Component Knockout</div>
+        </fieldset>
+    </template>
+
+    <!-- <div data-bind="component:{
+        name: 'usersignup',
+        params: {firstname: 'Paula', lastname: 'Last Name', email: 'you@email.com'}
+    }"> 
+    </div> -->
+
+    <!-- <usersignup params="firstname: 'Paula', lastname: 'Last Name', email: 'you@email.com'"></usersignup> -->
+
+    <!--ko component: {
+        name: "usersignup",
+        params: {firstname: 'Paula', lastname: 'Last Name', email: 'you@email.com'}
+    }-->
+    <!-- /ko-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- KnockoutJs Version 3.3 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js" type="text/javascript"></script>
+    <script src="scripts/app.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            ko.applyBindings();
+        });
+    </script>
+</body>
